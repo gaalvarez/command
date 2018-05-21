@@ -1,10 +1,12 @@
 #!/bin/sh
 
-#BASE="release-1.0.0"
-#TARGET="demo"
+#para ambiente de pruebas merge develop->release
+#BASE="develop"
+#TARGET="release-1.0.0"
 
-BASE="develop"
-TARGET="release-1.0.0"
+#para ambiente de aic merge release->demo
+BASE="release-1.0.0"
+TARGET="demo"
 
 arr="common
 afiliacion
@@ -17,17 +19,17 @@ portabilidad
 red-servicios
 pqr" 
 
+cd ..
 for Rep in $arr 
     do
-	echo '______________________________________________'
-        echo $Rep
+		echo '____________*****'"$Rep"'*****_____________'
         cd $Rep
-	git checkout $BASE
-	git pull origin $BASE
-	git checkout $TARGET
-	git pull origin $TARGET
-	git merge $BASE
-	cd ..
-	echo '______________________________________________'
+		git checkout $BASE
+		git pull origin $BASE
+		git checkout $TARGET
+		git pull origin $TARGET
+		git merge $BASE
+		cd ..
+		echo '______________________________________________'
     done
 

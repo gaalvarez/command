@@ -12,12 +12,12 @@ portabilidad
 red-servicios
 pqr" 
 
+cd ..
 for Rep in $arr 
     do
-	echo '______________________________________________'
-        echo $Rep
+		echo '____________*****'"$Rep"'*****_____________'
         cd $Rep
-	git checkout $BRANCH
-	cd ..
-	echo '______________________________________________'
+		git checkout $BRANCH
+		cd ..
+		echo '______________________________________________'
     done

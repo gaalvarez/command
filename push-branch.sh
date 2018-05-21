@@ -1,7 +1,9 @@
 #!/bin/sh
+#pruebas
+#BRANCH="release-1.0.0"
 
-BRANCH="release-1.0.0"
-#BRANCH="demo"
+#ambiente aic
+BRANCH="demo"
 
 arr="common
 afiliacion
@@ -14,13 +16,13 @@ portabilidad
 red-servicios
 pqr" 
 
+cd ..
 for Rep in $arr 
     do
-	echo '______________________________________________'
-        echo $Rep
-        cd $Rep
-	git checkout $BRANCH
-	git push origin $BRANCH
-	cd ..
-	echo '______________________________________________'
+		echo '____________*****'"$Rep"'*****_____________'
+	    cd $Rep
+		git checkout $BRANCH
+		git push origin $BRANCH
+		cd ..
+		echo '______________________________________________'
     done
